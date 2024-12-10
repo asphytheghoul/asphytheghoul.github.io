@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akash Kamalesh</title>
+    <!-- Poppins Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .name {
+            font-size: 1.5rem;
+            font-weight: 500;
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .resume-btn {
+            padding: 0.8rem 2rem;
+            background: transparent;
+            border: 2px solid #ffffff30;
+            color: white;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards 0.2s;
+        }
+
+        .resume-btn:hover {
+            border-color: #fff;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: zoomIn 1s ease forwards;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #ffffff10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .social-btn i {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .social-btn:hover {
+            background: #ffffff20;
+            transform: translateY(-5px);
+        }
+
+        .sections-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards 1.6s;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #fff;
+            transition: width 0.3s ease;
+        }
+
+        .section-title:hover::after {
+            width: 100%;
+        }
+
+        .card {
+            background: #ffffff10;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            border: 1px solid #ffffff20;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background: #ffffff15;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .card-subtitle {
+            font-size: 0.9rem;
+            color: #ffffff90;
+            margin-bottom: 1rem;
+        }
+
+        .card-link {
+            color: #4a9eff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .card-link:hover {
+            color: #6fb4ff;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Apply slide-in animation to social buttons */
+        .social-btn:nth-child(1) {
+            animation: slideIn 0.5s ease forwards 1s;
+        }
+        .social-btn:nth-child(2) {
+            animation: slideIn 0.5s ease forwards 1.2s;
+        }
+        .social-btn:nth-child(3) {
+            animation: slideIn 0.5s ease forwards 1.4s;
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .bio-text {
+        font-size: 1.1rem;
+        color: #ffffff90;
+        text-align: center;
+        margin-bottom: 2rem;
+        opacity: 0;
+        animation: fadeIn 0.5s ease forwards 0.8s;
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="name">Akash Kamalesh</div>
+        <a href="https://drive.google.com/file/d/1bgReRk-JZI9YO862rOaA2xi1C2iqOEUs/view?usp=sharing" target="_blank">
+            <button class="resume-btn">Resume</button>
+        </a>
+    </nav>
+
+    <div class="container">
+        <img src="images/Akash profile.jpeg" alt="Profile Picture" class="profile-pic">
+        <div class="bio-text">
+            Multimodal AI Research @IISc | Final Year CSE student @PES University
+        </div>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/akash-kamalesh" target="_blank" class="social-btn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/asphytheghoul" target="_blank" class="social-btn">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:akash.kamalesh03@gmail.com" class="social-btn">
+                <i class="far fa-envelope"></i>
+            </a>
+        </div>
+
+        <div class="sections-container">
+            <div class="section">
+                <h2 class="section-title">Publications</h2>
+                <div class="card">
+                    <h3 class="card-title">UnoLoRA: Single Low-Rank Adaptation for Efficient Multitask Fine-tuning</h3>
+                    <p class="card-subtitle">NeurIPS 2024 Workshop on Fine-Tuning in Modern Machine Learning</p>
+                    <a href="https://openreview.net/pdf?id=n6W0QkQBgw" target="_blank" class="card-link">View Paper →</a>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">Finding Potential On-street Parking Spots: An Object Detection and Segmentation Approach</h3>
+                    <p class="card-subtitle">8th International Conference on Smart Trends in Computing and Communications</p>
+                    <a href="https://link.springer.com/chapter/10.1007/978-981-97-1329-5_35" target="_blank" class="card-link">View Paper →</a>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Latest Achievements</h2>
+                <div class="card">
+                    <h3 class="card-title">Hasgeek Open Source AI Hackathon Winners</h3>
+                    <p class="card-subtitle">January 2024 - April 2024</p>
+                    <p>Winners of the National Level Open Source AI Hackathon (Winter Edition) hosted by Hasgeek, sponsored by Microsoft and Meta.</p>
+                    <a href="https://www.linkedin.com/posts/akash-kamalesh_hasgeek-thefifthelephant-ai-activity-7193589848182607872-m1-T" target="_blank" class="card-link">View Announcement →</a>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">Best Capstone Project Award - PES University</h3>
+                    <p class="card-subtitle">2024</p>
+                    <p>Project accepted at the 38th Workshop on Fine-Tuning in Machine Learning (NeurIPS 2024)</p>
+                    <p class="card-subtitle">Announcement coming soon!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
